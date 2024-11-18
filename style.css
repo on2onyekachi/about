@@ -6,7 +6,6 @@ body{
     margin: 0;
     scroll-behavior: smooth;
 }
-
 li{
     list-style: none;
 }
@@ -52,7 +51,6 @@ header nav{
 .hamburger {
     display: none;
 }
-
 .bar {
     display: block;
     width: 25px;
@@ -62,7 +60,6 @@ header nav{
     transition: all 0.3s ease-in-out;
     background-color: #101010;
 }
-
 .main-section{
     display: flex;
     justify-content: center;
@@ -70,25 +67,19 @@ header nav{
     margin: 7rem 0 13rem 0;
     padding: 1rem;
 }
-.img-cont{
-    /* width: 50%; */
-    /* background: #333; */
-}
 .profile-img{
     width: 100%;
     max-width: 28rem;
     height: auto;
     filter: grayscale(1);
     border-radius: 50%;
-}
-.details-sec{
+    animation: fadeIn 800ms ease-in-out;
 }
 .details-sec h1{
     font-size: clamp(3rem, 7vw, 7rem);
     margin: 0;
     margin-left: 1.5rem;
 }
-
 .details-sec h3{
     font-size: 1.5rem;
     text-transform: capitalize;
@@ -127,8 +118,9 @@ header nav{
     text-transform: capitalize;
     text-decoration: none;
     color: #f3f3f3;
-    transition: all 500ms;
+    transition: background-color 500ms;
     box-sizing: border-box;
+    animation: fadeIn 800ms ease-in-out;
 }
 .more-info a:hover{
     color: #333;
@@ -159,6 +151,100 @@ footer span{
 .social-icons a:hover{
     color: rgb(116, 71, 7);
 }
+/* Contact Page start */
+.contact-container {
+    margin: 3rem auto 7rem auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 800ms ease-in-out;
+    padding-left: 1rem;
+}
+.contact-header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    color: #333;
+    text-align: center;
+    margin: 0.2rem;
+}
+.contact-header p {
+    text-align: center;
+    color: #545454;
+    letter-spacing: 0.2px;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 1rem;
+}
+.contact-form {
+    margin-top: 2.5rem;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgb(116, 71, 7);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+.submit-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+    background-color: rgb(116, 71, 7);
+}
+.copyright-container h4{
+    font-size: large;
+    font-weight: lighter;
+    text-transform: capitalize;
+}
+.copyright-container span{
+    font-size: small;
+    font-weight: lighter;
+    text-transform: capitalize;
+}
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive Design */
 @media (max-width:900px) {
     .main-section {
         flex-direction: column-reverse;
@@ -176,41 +262,50 @@ footer span{
     }
     .nav-menu {
         position: absolute;
-        left: -100%;
+        left: -120%;
         top: 5rem;
         background-color: #fff;
-        /* width: 100%; */
-        /* border-radius: 10px; */
-        text-align: center;
         transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     }
     .nav-menu.active {
         left: 0;
     }
-
     .hamburger {
         display: block;
         cursor: pointer;
     }
     footer{
         flex-direction: column;
-        /* justify-content: space-evenly; */
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
     footer > div{
         margin-bottom: 3rem;
     }
     footer h4 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
-
     footer span {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+    .copyright-container {
+        margin-top: 2rem;
+        margin-bottom: 0;
     }
 }
-@media (max-width:550px) {
+@media (max-width:600px) {
     .more-info a {
         font-size: 1.3rem;
+    }
+    .contact-header p {
+        font-size: 0.9rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+    .submit-btn {
+        font-size: 0.9rem;
     }
 }
